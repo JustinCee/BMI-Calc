@@ -1,15 +1,16 @@
+# import tkinter module
 from tkinter import *
-
+# details of the tkinter window
 myframe = Tk()
 myframe.geometry("700x500")
 myframe.title("Temperature Converter")
 myframe.config(bg="turquoise")
-
+# setting value for entries
 cel = StringVar()
 fahren = StringVar()
 result = StringVar()
 
-
+# All functions needed for the temp converter
 def convert_c():
     cel = int(celsius_3.get())
     fahren = (cel * 9 / 5) + 32
@@ -45,12 +46,12 @@ def clear_entries():
 def exit_program():
     myframe.destroy()
 
-
+# Activate buttons
 celsius_1 = Button(myframe, text="Activate Celsius - Fahrenheit", command=activate_celsius)
 celsius_1.place(x=10, y=20)
 fahrenheit_1 = Button(myframe, text="Activate Fahrenheit - Celsius", command=activate_fahrenheit)
 fahrenheit_1.place(x=470, y=20)
-
+# labels for celsius - fahrenheit and vice versa
 celsius_2 = Label(myframe, text="Celsius to Fahrenheit", bg="turquoise")
 celsius_2.place(x=50, y=60)
 celsius_3 = Entry(myframe, state='readonly', textvariable=cel)
@@ -60,7 +61,7 @@ fahrenheit_2 = Label(myframe, text="Fahrenheit to Celsius", bg="turquoise")
 fahrenheit_2.place(x=500, y=60)
 fahrenheit_3 = Entry(myframe, state='readonly', textvariable=fahren)
 fahrenheit_3.place(x=490, y=90)
-
+# the bottom buttons created 
 calc = Button(myframe, text="Calculate Celsius", command=convert_f)
 calc.place(x=550, y=350)
 calc_2 = Button(myframe, text="Calculate Fahrenheit", command=convert_c)
